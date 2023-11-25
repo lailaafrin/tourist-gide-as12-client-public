@@ -13,7 +13,9 @@ const MyLayouts = () => {
                 noHeaderFooter || <Navbar></Navbar>
             }
             
-            <Outlet></Outlet>
+            <div className='pt-24  min -h-[calc(100vh-60)]'>
+                <Outlet></Outlet>
+                </div>
             {
                 noHeaderFooter || <Footer></Footer>
             }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axiosSecure from '../../../api';
-
+import { useLoaderData } from 'react-router-dom';
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,25 +11,28 @@ import Typography from '@mui/material/Typography';
 import { FaHeart } from 'react-icons/fa';
 import { Container } from '@mui/material';
 
-import 'tailwindcss/tailwind.css'; 
-import { CSSTransition } from 'react-transition-group'; 
+import 'tailwindcss/tailwind.css'; // Import Tailwind CSS
+import { CSSTransition } from 'react-transition-group'; // Import CSSTransition
+import { Helmet } from 'react-helmet-async';
 
-
-const PackagesCard = () => {
-    
-    const [ services, setServices ] = useState([]);
+const AllPackage = () => {
+    const packages = useLoaderData();
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
-        axiosSecure.get('/packageAll')
-            .then((res) =>
-                setServices(res.data));
+        axiosSecure.get('/packageAll').then((res) => setServices(res.data));
     }, []);
+
     return (
         <Container>
+            <Helmet>
+
+                <title>AllPackage</title>
+            </Helmet>
             <h1 className='text-3xl text-center font-semibold py-4'>  All Tourist Packages</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
 
-                {services?.slice(0,3).map((pkg, index) => (
+                {services.map((pkg, index) => (
                     <Card key={pkg._id} sx={{ maxWidth: 345 }} className="relative">
                         <CSSTransition
                             in={true}
@@ -54,9 +57,9 @@ const PackagesCard = () => {
                                 <button className="rounded-full">
                                     <FaHeart className="text-3xl text-gray-600" />
                                 </button>
-                                <h1>TourType </h1>
-                                <h1>TripTitle </h1>
-                                <p className='text-end font-semibold'>Price:{ pkg.price}</p>
+                                <h1 className='text-2xl font-semibold text-black'>{pkg.tourist_name} </h1>
+                                <h1 className='my-3 text-orange-500'>{pkg.tour_type} </h1>
+                                <p className='font-semibold text-end'>Price:{pkg.price}</p>
                             </Typography>
                         </CardContent>
                         <CardActions>
@@ -76,4 +79,4 @@ const PackagesCard = () => {
     );
 };
 
-export default PackagesCard;
+export default AllPackage;

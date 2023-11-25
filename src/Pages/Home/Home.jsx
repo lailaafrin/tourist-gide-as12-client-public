@@ -4,7 +4,9 @@ import TourTabs from './Guide/TourTabs';
 import Banner from '../../Sheard/Banner';
 
 
+
 const Home = () => {
+    
     return (
         <div>
             <Helmet>
@@ -13,6 +15,8 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <TourTabs></TourTabs>
+
+            
 
         </div>
     );

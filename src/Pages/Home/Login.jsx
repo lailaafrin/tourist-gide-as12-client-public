@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import image from '../../assets/login.png'
 import { AiFillLock, AiFillUnlock } from "react-icons/ai";
 import { useAuth } from '../../hooks/useAuth';
@@ -13,6 +13,11 @@ const Login = () => {
     const { singIn, gooleLogin, loading } = useAuth();
     const [ showPassword, setShowPassword ] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    
+    const from = location?.state?.from?.pathname || '/'
+
+    
 
     const handleLogin = async e => {
         e.preventDefault();
@@ -31,8 +36,8 @@ const Login = () => {
         
 
             // get token
-            await getToken(result?.user?.email)
-            navigate('/')
+            await getToken('/')
+            navigate(from, {replace:true})
             toast.success('Login Successful')
 
         } catch (err) {
@@ -55,7 +60,8 @@ const Login = () => {
 
             //5. get token
             await getToken(result?.user?.email)
-            navigate('/')
+
+            navigate(from, { replace: true })
             toast.success('login Successful')
         } catch (err) {
             console.log(err)

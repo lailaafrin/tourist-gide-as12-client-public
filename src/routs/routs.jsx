@@ -12,6 +12,9 @@ import Commuity from "../Pages/Home/Commuity";
 import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
 import Blogs from "../Pages/Blogs";
+import AllPackage from "../Pages/Home/Guide/AllPackage";
+import { getPackageAll } from "../api/package";
+import PrivateRout from "./PrivateRout";
 
 export const myRouts = createBrowserRouter([
     {
@@ -50,6 +53,13 @@ export const myRouts = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/allpackage',
+                element: <PrivateRout><AllPackage></AllPackage></PrivateRout>,
+                
+                
+
             }
             
 

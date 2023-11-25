@@ -64,7 +64,7 @@ const MenuDropdown = () => {
                                 <Link to='/login' className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'>
                                     Login
                                 </Link>
-                                <Link to='/signup' className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'>
+                                    <Link to='/singup' className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'>
                                     Sign Up
                                 </Link>
                             </>
