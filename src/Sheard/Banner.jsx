@@ -12,7 +12,7 @@ const Banner = () => {
                 media={[
                     {
 
-                        
+
                         source: 'https://i.ibb.co/89WQQKC/water-landscape-in-bangladesh.jpg',
                     },
                     {

@@ -3,6 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 
 import { useAuth } from '../hooks/useAuth';
+import Loader from '../Sheard/Loader';
 
 const PrivateRout = ({ children }) => {
 
@@ -12,7 +13,7 @@ const PrivateRout = ({ children }) => {
 
     if (loading) {
         
-        return 
+        return <Loader></Loader>
 
 
     }

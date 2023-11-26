@@ -60,9 +60,11 @@ const PackagesCard = () => {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <button className="bg-blue-600 p-2 rounded-md hover:bg-blue-300 text-white mr-5">
-                                Package Details
-                            </button>
+                            <Link to={`/detailsePackage/${pkg._id }`}>
+                                <button className="bg-blue-600 p-2 rounded-md hover:bg-blue-300 text-white mr-5">
+                                    Package Details
+                                </button>
+                            </Link >
                             <Link to="/allpackage">
                                 <button className="bg-blue-600 p-2 rounded-md hover:bg-blue-300 text-white">
                                     All Packages

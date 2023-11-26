@@ -6,7 +6,7 @@ import axiosSecure from "."
 export const saveUser = async user => {
     const currentUser = {
         email: user.email,
-        role: 'tourist',
+        role: 'guider',
         status: 'Verified',
     }
     const { data } = await axiosSecure.put(`/user/${ user?.email }`, currentUser)
@@ -27,3 +27,12 @@ export const clearCookie = async () => {
     const { data } = await axiosSecure.get('/logout')
     return data
 } 
+
+
+// get roule
+
+export const getRole = async (email) => {
+    const { data } = await axiosSecure(`/user/${ email }`)
+
+    return data.role
+}

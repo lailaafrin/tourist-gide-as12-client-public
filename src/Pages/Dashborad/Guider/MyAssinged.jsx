@@ -1,11 +1,11 @@
 import React from 'react';
 
-const DetailsPage = () => {
+const MyAssinged = () => {
     return (
         <div>
-            
+            my adsafsfds
         </div>
     );
 };
 
-export default DetailsPage;
+export default MyAssinged;

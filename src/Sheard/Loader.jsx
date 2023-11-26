@@ -22,3 +22,5 @@ const Loader = ({ smallHeight }) => {
 };
 
 export default Loader;
+
+// url("https://i.ibb.co/cYM1pDC/Nilgiri-Bandarban.jpg

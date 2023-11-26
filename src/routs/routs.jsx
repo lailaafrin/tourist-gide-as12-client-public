@@ -13,8 +13,17 @@ import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
 import Blogs from "../Pages/Blogs";
 import AllPackage from "../Pages/Home/Guide/AllPackage";
-import { getPackageAll } from "../api/package";
+import { detailsPage, getPackageAll } from "../api/package";
 import PrivateRout from "./PrivateRout";
+import DetailsePackage from "../Pages/Home/Guide/DetailsePackage";
+import DashBorad from "../Pages/Dashborad/DashBorad";
+import MyProfile from "../Pages/Dashborad/Tourist/MyProfile";
+import MyBokings from "../Pages/Dashborad/Tourist/MyBokings";
+import MywishList from "../Pages/Dashborad/Tourist/MywishList";
+import TouristRout from "./TouristRouts";
+import ManageUsers from "../Pages/Dashborad/admin/ManageUsers";
+import AdminRout from "./AdminRout";
+import MyAssinged from "../Pages/Dashborad/Guider/MyAssinged";
 
 export const myRouts = createBrowserRouter([
     {
@@ -54,13 +63,16 @@ export const myRouts = createBrowserRouter([
                 path: '/blogs',
                 element: <Blogs></Blogs>
             },
+            
             {
                 path: '/allpackage',
                 element: <PrivateRout><AllPackage></AllPackage></PrivateRout>,
-                
-                
-
-            }
+            },
+            {
+                path: '/detailsePackage/:id',
+                element: <DetailsePackage></DetailsePackage>,
+                loader:({params})=>detailsPage(params.id)
+            },
             
 
 
@@ -68,25 +80,42 @@ export const myRouts = createBrowserRouter([
         ]
     },
 
-    // {
-    //     path: '/dashbord',
-    //     element: <DashBorad></DashBorad>,
-    //     children: [
-    //         {
-    //             path: 'cart',
-    //             element: <Cart></Cart>
-    //         },
+    {
+        path: '/dashboard',
+        element: <PrivateRout><DashBorad></DashBorad></PrivateRout>,
+        children: [
+           
 
-    //         {
-    //             path: 'addroom',
-    //             element: <AddRoom></AddRoom>
-    //         },
-    //         {
-    //             path: 'room-list',
-    //             element: <MyListRoom></MyListRoom>
-    //         }
-    //     ]
-    // }
+            {
+                path: 'myProfile',
+                element: <MyProfile></MyProfile>,
+               
+            },
+            {
+                path: 'myBookings',
+                element: <PrivateRout>
+                    <TouristRout> <MyBokings></MyBokings></TouristRout>
+                </PrivateRout>
+            },
+            {
+                path: 'mywishList',
+                element: <MywishList></MywishList>
+            },
+            {
+                path: 'manage-users',
+                element: <PrivateRout>
+                    <AdminRout>
+                        <ManageUsers></ManageUsers>
+                    </AdminRout>
+                </PrivateRout>
+            },
+            {
+                path: 'my-assined',
+                element:<MyAssinged></MyAssinged>
+            }
+          
+        ]
+    }
 
 
 ]);
