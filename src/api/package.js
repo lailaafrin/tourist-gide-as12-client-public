@@ -17,7 +17,7 @@ export const detailsPage = async id => {
 }
 
 export const getUserPackage = async (email) => {
-    const { data } = await axiosSecure(`/packageAll/${ email }`)
+    const { data } = await axiosSecure(`/package/${ email }`)
 
     return data;
 }

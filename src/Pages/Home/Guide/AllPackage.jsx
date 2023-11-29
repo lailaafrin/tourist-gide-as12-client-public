@@ -49,14 +49,21 @@ const AllPackage = () => {
                                 className="hover:scale-110 transition-transform duration-300 ease-in-out transform"
                             />
                         </CSSTransition>
+                        
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
                                 {/* Lizard */}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                <button className="rounded-full">
-                                    <FaHeart className="text-3xl text-gray-600" />
-                                </button>
+                               
+                               
+                              
+                                    <button className="rounded-full">
+                                        <FaHeart className="text-3xl text-gray-600" />
+                                    </button>
+                             
+
+
                                 <h1 className='text-2xl font-semibold text-black'>{pkg.tourist_name} </h1>
                                 <h1 className='my-3 text-orange-500'>{pkg.tour_type} </h1>
                                 <p className='font-semibold text-end'>Price:{pkg.price}</p>

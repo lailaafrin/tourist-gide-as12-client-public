@@ -12,6 +12,7 @@ import { ImSpinner9 } from "react-icons/im";
 const SingUp = () => {
     const { createUser, handleUpdateProfile, gooleLogin,loading } = useAuth();
     const [ showPassword, setShowPassword ] = useState(false);
+    const [ error, setError ] = useState("");
     const navigate = useNavigate();
 
     const handleRegister = async e => {
@@ -24,6 +25,27 @@ const SingUp = () => {
         const image = form.image.files[ 0 ];
         const imageData = await imageUpload(image)
         
+
+        setError('');
+        setError('');
+
+        setError({});
+
+        if (password.length < 6) {
+            setError({ password: 'Password must be at least 6 characters.' });
+            return;
+        } else if (!/[A-Z]/.test(password)) {
+            setError({ password: 'Your password must contain at least one uppercase letter.' });
+            return;
+        }
+
+        if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            setError({ password: 'Your password must contain at least one special character.' });
+            return;
+        }
+
+        
+
         
         try {
              
@@ -132,7 +154,9 @@ const SingUp = () => {
                                     data-temp-mail-org='0'
                                 />
                             </div>
-                            <div>
+                        <div>
+                            
+                            
                                 <div className='flex justify-between'>
                                     <label htmlFor='password' className='text-sm mb-2'>
                                         Password
@@ -158,6 +182,13 @@ const SingUp = () => {
 
                                 }
                             </span>
+                            {
+                                error.password && (
+                                    <p className='text-red-500 text-sm mt-2'>
+                                        {error.password}
+                                    </p>
+                                )
+                            }
                             </div>
                         </div>
 
@@ -167,7 +198,7 @@ const SingUp = () => {
                                 className='bg-blue-500 w-full rounded-md py-3 text-white'
                         >
                             
-                            {loading ? <ImSpinner9 className='animate-spin m-auto' /> : 'Submit'}
+                            {loading ? <ImSpinner9 className='animate-spin m-auto' /> : 'singup'}
                             
                             </button>
                         </div>

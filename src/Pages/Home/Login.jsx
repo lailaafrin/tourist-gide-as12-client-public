@@ -12,6 +12,8 @@ import { ImSpinner9 } from "react-icons/im";
 const Login = () => {
     const { singIn, gooleLogin, loading } = useAuth();
     const [ showPassword, setShowPassword ] = useState(false);
+    const [ error, setError ] = useState("");
+
     const navigate = useNavigate();
     const location = useLocation();
     
@@ -25,8 +27,27 @@ const Login = () => {
         const form = e.target
         const email = form.email.value;
         const password = form.password.value;
-        
 
+       
+       
+        
+        setError('');
+        setError('');
+
+        setError({});
+
+        if (password.length < 6) {
+            setError({ password: 'Password must be at least 6 characters.' });
+            return;
+        } else if (!/[A-Z]/.test(password)) {
+            setError({ password: 'Your password must contain at least one uppercase letter.' });
+            return;
+        }
+
+        if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            setError({ password: 'Your password must contain at least one special character.' });
+            return;
+        }
 
         try {
 
@@ -109,14 +130,16 @@ const Login = () => {
                                 </label>
                             </div>
                             <input
-                                type='password'
+                                type={showPassword ? "text" : "password"}
                                 name='password'
-                                autoComplete='current-password'
+                                autoComplete='new-password'
                                 id='password'
                                 required
                                 placeholder='*******'
                                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-blue-500 bg-gray-200 text-gray-900'
+
                             />
+
                             <span className='absolute top-100 right-80 mt-2' onClick={() => setShowPassword(!showPassword)} >
 
                                 {
@@ -126,6 +149,13 @@ const Login = () => {
 
                                 }
                             </span>
+                            {
+                                error.password && (
+                                    <p className='text-red-500 text-sm mt-2'>
+                                        {error.password}
+                                    </p>
+                                )
+                            }
                         </div>
                     </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -15,6 +15,15 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Container from '../../../Sheard/Container';
+
+import { useAuth } from '../../../hooks/useAuth';
+import { imageUpload } from '../../../api/imageupload';
+
+;
+import { Helmet } from 'react-helmet-async';
+import BookingFrom from '../../../componets/BookingFrom';
+
+
 
 const itemData = [
     {
@@ -90,11 +99,49 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 const DetailsePackage = () => {
     const details = useLoaderData();
+    const { user } = useAuth();
+    console.log(details)
     const { _id, tourist_image, image, tourist_name, price } = details || {};
 
-    return (
+
+    
+    
+  
+
+    const handleBooking =async (e) => {
+        e.preventDefault();
+
+        const form = e.target
+
        
-            <div >
+        const name = form.name.value;
+        const email = form.email.value;
+        const price = form.price.value;
+
+        const startDate = state[ 0 ].startDate;
+        const endDate = state[ 0 ].endDate;
+        const selectOption = form.selectOption.value;
+        const image = form.image.files[ 0 ]; 
+        
+        const imageData = await imageUpload(image);
+
+        console.log(name, email, price,  selectOption);
+        console.log(imageData);
+
+
+    
+    
+    }
+
+   
+    
+    return (
+            
+        <div >
+            <Helmet>
+
+                <title>Details Package</title>
+            </Helmet>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh', className: 'sm:grid-cols-1 lg:grid-cols-3' }}>
  
 
@@ -115,7 +162,8 @@ const DetailsePackage = () => {
                         ))}
                     </ImageList>
             </div>
-            
+            {/* Details */}
+
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100vw', height: '100vh' }}>
 
 
@@ -123,7 +171,7 @@ const DetailsePackage = () => {
                     <Card sx={{ maxWidth: 900, width: '100%' }}>
                         <CardMedia
                             sx={{ height: 400 }}
-                            image={image || 'url_to_fallback_image'}
+                            image={image }
                             title="green iguana"
                         />
 
@@ -135,33 +183,44 @@ const DetailsePackage = () => {
                         </CardContent>
 
                         <CardActions>
+                        <div>
                             <h1 className='text-2xl font-semibold text-black'>{tourist_name} </h1>
                             <h1>{price}</h1>
-       
-             
-                        <Link to='/dashboard/myBookings'>
-                            <Button size="small">Book Now</Button>
-                        </Link>
-                            {/* <Button size="small">Learn More</Button> */}
-                        </CardActions>
-                    </Card>
 
+                               
+                            {/* <Link to='/dashboard/myBookings'>
+                            <Button size="small">Book Now</Button>
+                        </Link> */}
+                           
+                        </div>
+                       
+                    </CardActions>
+                 
+                </Card>
 
             </div>
+            <BookingFrom></BookingFrom>
             <Container>
-                <div >
+            
+
+
+
+            {/* Acrodian */}
+           
+                <div className='mt-16'>
                     <Accordion>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
-                            <Typography>Accordion 1</Typography>
+                            <Typography>
+                                1. Discover the Hidden Gems: A Tour Guide's Perspective
+                            </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Welcome fellow adventurers! Today, we embark on a journey to explore the lesser-known wonders of our destination. As your trusty tour guide, I am thrilled to unveil the secrets that make this place truly extraordinary.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -171,12 +230,13 @@ const DetailsePackage = () => {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                         >
-                            <Typography>Accordion 2</Typography>
+                            <Typography> 2.
+                                The Enchanting Old Town
+                            </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Our first stop is the heart of the city - the Old Town. Cobblestone streets echo with tales of centuries past. Immerse yourself in the rich history as we stroll by medieval architecture, each building whispering stories of bygone eras. Don't forget to capture the vibrant colors and intricate details that add a touch of magic to this enchanting place.
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
@@ -186,9 +246,26 @@ const DetailsePackage = () => {
                             aria-controls="panel3a-content"
                             id="panel3a-header"
                         >
-                            <Typography>Disabled Accordion</Typography>
+                            <Typography>Culinary Delights Around Every Corner</Typography>
                         </AccordionSummary>
                     </Accordion>
+                </div>
+                <div>
+                    <h1 className='text-3xl font-bold mt-10'>Nature's Retreat: Off the Beaten Path</h1>
+                    <p>
+                        Escape the hustle and bustle as we venture off the beaten path to discover nature's hidden retreats. Serene landscapes, untouched by the masses, await our exploration. From breathtaking viewpoints to tranquil lakes, these spots offer a sanctuary for those seeking solace in the midst of Mother Nature's beauty.
+                    </p>
+                    <h1 className='text-3xl font-bold mt-10'>Cultural Encounters and Local Traditions</h1>
+
+                    <p>
+                        Our journey wouldn't be complete without immersing ourselves in the local culture. Engage with the warm-hearted locals, learn about traditional crafts, and witness cultural performances that showcase the soul of the community. These authentic experiences will leave you with a deeper appreciation for the richness of this destination.
+
+
+                    </p>
+                    <h1 className='text-2xl text-orange-400 font-medium'>  Sunset Spectacles and Nighttime Wonders</h1>
+                    As the day winds down, join me in capturing the breathtaking sunset at a secret vantage point. Witness the sky ablaze with hues of orange and pink, creating a canvas that will be etched in your memory. And fear not, our adventure doesn't end with the setting sun; we'll explore the nightlife and discover the hidden gems that come alive after dark.
+
+                    So, fellow adventurers, are you ready to embark on this journey of discovery? Pack your curiosity and join me as we uncover the treasures that await in every corner. Let the adventure begin! 🌍🗺️✨
                 </div>
             </Container>
 

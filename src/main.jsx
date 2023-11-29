@@ -6,7 +6,8 @@ import { RouterProvider } from 'react-router-dom'
 import './index.css'
 import { myRouts } from './routs/routs'
 import AuthProvider from './Providers/AuthProvider'
-
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
 import { QueryClient, QueryClientProvider,} from '@tanstack/react-query'
 
 const queryClient = new QueryClient()

@@ -26,7 +26,7 @@ const PackagesCard = () => {
     }, []);
     return (
         <Container>
-            <h1 className='text-3xl text-center font-semibold py-4'>  All Tourist Packages</h1>
+            <h1 className='text-3xl text-center font-semibold py-4'> Our Package </h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
 
                 {services?.slice(0,3).map((pkg, index) => (
@@ -51,11 +51,15 @@ const PackagesCard = () => {
                                 {/* Lizard */}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                                <button className="rounded-full">
-                                    <FaHeart className="text-3xl text-gray-600" />
-                                </button>
-                                <h1>TourType </h1>
-                                <h1>TripTitle </h1>
+            
+                               
+                                    <button className="rounded-full">
+                                        <FaHeart className="text-3xl text-gray-600" />
+                                    </button>
+                              
+                                <h1 className='text-2xl font-semibold text-black'>{pkg.tourist_name} </h1>
+                                <h1 className='my-3 text-orange-500'>{pkg.tour_type} </h1>
+                               
                                 <p className='text-end font-semibold'>Price:{ pkg.price}</p>
                             </Typography>
                         </CardContent>

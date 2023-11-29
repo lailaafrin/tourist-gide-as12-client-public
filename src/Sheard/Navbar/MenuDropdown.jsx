@@ -14,7 +14,7 @@ const MenuDropdown = () => {
                 {/* Become A  btn */}
                 <div className='hidden md:block'>
                     <button className='disabled:cursor-not-allowed cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'>
-                        Tourist gard
+                        {/* Tourist gard */}
                     </button>
                 </div>
                 {/* Dropdown btn */}
@@ -26,12 +26,11 @@ const MenuDropdown = () => {
                     <div className='hidden md:block'>
                         {/* Avatar */}
                         <img
-                            className='rounded-full'
+                            className='rounded-full w-10 h-10'
                             referrerPolicy='no-referrer'
                             src={user && user.photoURL ? user.photoURL : ('https://i.ibb.co/njGQgwg/icon.png')}
                             alt='profile'
-                            height='30'
-                            width='30'
+                           
                         />
 
                     </div>

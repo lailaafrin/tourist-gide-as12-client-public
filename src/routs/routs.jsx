@@ -13,7 +13,7 @@ import AboutUs from "../Pages/AboutUs";
 import ContactUs from "../Pages/ContactUs";
 import Blogs from "../Pages/Blogs";
 import AllPackage from "../Pages/Home/Guide/AllPackage";
-import { detailsPage, getPackageAll } from "../api/package";
+import { detailsPage, getPackageAll, getUserPackage } from "../api/package";
 import PrivateRout from "./PrivateRout";
 import DetailsePackage from "../Pages/Home/Guide/DetailsePackage";
 import DashBorad from "../Pages/Dashborad/DashBorad";
@@ -24,11 +24,15 @@ import TouristRout from "./TouristRouts";
 import ManageUsers from "../Pages/Dashborad/admin/ManageUsers";
 import AdminRout from "./AdminRout";
 import MyAssinged from "../Pages/Dashborad/Guider/MyAssinged";
+import Error from "../Pages/Error";
+import Profile from "../Pages/Dashborad/AllUsers.jsx/Profile";
+
 
 export const myRouts = createBrowserRouter([
     {
         path: "/",
-        element:<MyLayouts></MyLayouts>,
+        element: <MyLayouts></MyLayouts>,
+        errorElement:<Error></Error> ,
         children: [
             {
                 path: '/',
@@ -70,14 +74,11 @@ export const myRouts = createBrowserRouter([
             },
             {
                 path: '/detailsePackage/:id',
-                element: <DetailsePackage></DetailsePackage>,
+                element: <PrivateRout> <DetailsePackage></DetailsePackage></PrivateRout>,
                 loader:({params})=>detailsPage(params.id)
             },
-            
-
-
-
-        ]
+           
+            ]
     },
 
     {
@@ -96,10 +97,11 @@ export const myRouts = createBrowserRouter([
                 element: <PrivateRout>
                     <TouristRout> <MyBokings></MyBokings></TouristRout>
                 </PrivateRout>
+                
             },
             {
                 path: 'mywishList',
-                element: <MywishList></MywishList>
+                element: <PrivateRout><MywishList></MywishList></PrivateRout>
             },
             {
                 path: 'manage-users',
@@ -112,10 +114,17 @@ export const myRouts = createBrowserRouter([
             {
                 path: 'my-assined',
                 element:<MyAssinged></MyAssinged>
-            }
+            },
+            {
+                path: 'profile',
+                element: <PrivateRout><Profile></Profile></PrivateRout>
+            },
           
         ]
-    }
+    },
+
+
+   
 
 
 ]);

@@ -71,13 +71,13 @@ const SiteBer = () => {
                             <ManuItems
                             
                                 icon={FcStatistics}
-                                label='Home'
-                                address='/'
+                                label='Dashorad'
+                                address='/dashboard'
                             />
 
                             {/* tourist Menu Items */}
                             {role === 'guide' && <GuideManu />}
-                            {role === 'tourist' ? toggle ? <TouristManu /> : <GuideManu />:''}
+                            {role === 'tourist' ? toggle ? <GuideManu /> : <TouristManu />:''}
                             {role === 'admin' && <Adminmanu />}
                             
                         </nav>

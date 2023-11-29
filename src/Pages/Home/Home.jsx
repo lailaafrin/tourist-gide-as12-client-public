@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import TourTabs from './Guide/TourTabs';
 import Banner from '../../Sheard/Banner';
 import TourType from '../../componets/TourType';
-import MUITable from '../../Sheard/MUITable';
+import MeetVideo from '../../componets/Buttons/MeetVideo';
+// import Section3 from '../../componets/Section3';
 
 
 
@@ -17,8 +18,9 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <TourTabs></TourTabs>
+           <MeetVideo></MeetVideo>
             <TourType></TourType>
-<MUITable></MUITable>
+
             
 
         </div>
