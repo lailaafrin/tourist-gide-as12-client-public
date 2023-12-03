@@ -7,7 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const TourTabs = () => {
     const packages = useLoaderData();
-    console.log(packages)
+    // console.log(packages)
 
     
     return (
@@ -79,6 +79,52 @@ const TourTabs = () => {
                     </TabPanel>
                    
                     <TabPanel>
+
+                        <div>
+
+                            Here's a general list to get <h1 className='text-xl'>you started:</h1>
+
+                            <h1 className='text-2xl'>1.Local Tour Operators:</h1>
+                            <p>
+                                Check with local tour operators in the area you're interested in. They often have a team of experienced guides.</p>
+                            <h1 className='text-2xl'>2 .Online Platforms:</h1>
+
+                            <p> Websites like Viator, GetYourGuide, and ToursByLocals connect travelers with local guides worldwide. You can search for guides based on your destination and interests.</p>
+                            <h1 className='text-2xl'> 3. Tourism Websites:</h1>
+
+                            <p> Many official tourism websites provide information about certified guides in specific regions. For example, the official tourism website of a city or country may have a list of recommended guides.</p>
+                            <h1 className="text-2xl">4. TripAdvisor:</h1>
+
+                            <p>
+                                TripAdvisor is a popular platform for travel-related information. You can find reviews and recommendations for tour guides in various destinations.
+                            </p>
+                            <h1 className="text-2xl">5. Travel Agencies:</h1>
+
+                            <p>     Traditional travel agencies often have partnerships with local guides. Inquire with them about available options.</p>
+                            <h1 className="text-2xl">6. Local Chambers of Commerce:</h1>
+
+                            <p>  Contact the local chamber of commerce or tourism office. They may have information on licensed guides.</p>
+                            <h1 className="text-2xl">7.  Professional Associations:</h1>
+
+                            <p>Look for guides who are members of professional associations such as the Professional Tour Guide Association or the World Federation of Tourist Guide Associations.</p>
+                            <h1 className="text-2xl">8.  Personal Recommendations:</h1>
+
+                            <p>Ask friends, family, or colleagues who have visited the destination for recommendations. Personal experiences can be valuable.</p>
+                            <h1 className="text-2xl">9.Social Media Groups:</h1>
+
+                            <p>  Join travel-related groups on social media platforms. Members often share recommendations for guides based on their own experiences.</p>
+                            <h1 className="text-2xl">10.  Hotels and Accommodations:</h1>
+
+                            <p> Some hotels and accommodations have partnerships with local guides. Inquire at your place of stay for recommendations.
+                                Remember to verify the credentials and reviews of the tour guides to ensure a positive and safe experience. Additionally, consider the type of tour you're interested in (historical, adventure, culinary, etc.) and find a guide with expertise in that area.
+                           </p>
+                            
+                           
+                                <button className="bg-blue-600 p-2 rounded-md hover:bg-blue-300 text-white mr-5 w-full my-5">
+                                    Package Details
+                                </button>
+                          
+                        </div>
                         <h2 className='text-3xl'> Meet Our Expert Guides: Your Passport to Unforgettable Adventures</h2>
                        
 

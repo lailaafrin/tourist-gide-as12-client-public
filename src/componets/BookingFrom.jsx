@@ -1,74 +1,100 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DateRange } from 'react-date-range';
 import { imageUpload } from '../api/imageupload';
 import { useAuth } from '../hooks/useAuth';
-import axiosSecure from '../api';
-import toast from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
 
-const BookingFrom = () => {
+
+import { useLocation, useNavigate } from 'react-router-dom';
+import { formatDistance } from 'date-fns';
+import { addPackage } from '../api/package';
+import Swal from 'sweetalert2';
+import axiosSecure from '../api';
+
+
+const BookingFrom = ({ details }) => {
+    
     const { user } = useAuth()
     const navigate = useNavigate();
     const location = useLocation();
-    const [ dateRange, setDateRange ] = useState([
+    const [ loading, setLoading ] = useState(false);
+    const totalDays = parseInt(formatDistance(
+        new Date(details?.to),
+        new Date(details?.from)).split(' ')[ 0 ])
+    
+    const totalPrice = totalDays * details?.price;
+    
+    const from = new Date();
+    const to = new Date();
+
+    const [ state, setState ] = useState([
         {
-            startDate: new Date(),
-            endDate: new Date(),
-            key: 'selection',
-        },
+            startDate: from,
+            endDate: to,
+            key: 'selection'
+        }
     ]);
 
+    const handleDateChange = (item) => {
+        setState([ item.selection ]);
 
-    const [ selectedGuider, setSelectedGuider ] = useState('');
-    const handleDateChange = (ranges) => {
-      
-        setDateRange([ ranges.selection ]);
-    };
-        const handleGuiderChange = (e) => {
-        setSelectedGuider(e.target.value);
+        // console.log('Selected Date Range:', item.selection);
     };
     
-
-        const handleSubmit = async (e) => {
+  
+    const handleSubmit = async (e) => {
+        setLoading(true);
         e.preventDefault();
 
-        // Extract form data
         const form = e.target;
         const name = form.name.value;
-        const email = form.email.value;
         const price = form.price.value;
-        const startDate = dateRange[ 0 ].startDate;
-        const endDate = dateRange[ 0 ].endDate;
-        const selectOption = selectedGuider;
+        const email = form.email.value;
+        const guide = form.guide.value;
+        const to = state[ 0 ].endDate;
+        const from = state[ 0 ].startDate;
         const image = form.image.files[ 0 ];
-
-        // Handle image upload
         const imageData = await imageUpload(image);
-          
 
         const packageItem = {
-name,email,price,startDate,endDate,selectOption,imageData
+            name,
+            email,
+            price,
+            to,
+            from,
+            imageData,
+            guide
+        };
+
+        try {
+            const response = await axiosSecure.post('/booking', packageItem, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.data.insertedId) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Package Book Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool',
+                });
+            }
+
+            navigate('/dashboard/myBookings');
+        } catch (error) {
+            console.error('Error while submitting form:', error);
+        } finally {
+            setLoading(false);
         }
-        
-        // console.log('Name:', name);
-        // console.log('Email:', email);
-        // console.log('Price:', price);
-        // console.log('Selected Date Range:', dateRange);
-        // console.log('Guider Selection:', selectOption);
-        // console.log('Image Data:', imageData);
 
-
-        axiosSecure.post('/booking', packageItem)
-            .then(res => {
-                console.log(res.data)
-                
-                if (res.data.insertedId) {
-                    toast.success('Book now')
-                    navigate('/dashboard/myBookings')
-                }
-            })
-        
+        console.log(name, email, price, to, from, imageData, guide);
     };
+
+
+   
+
+    
 
     return (
         <div className='w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50'>
@@ -80,12 +106,21 @@ name,email,price,startDate,endDate,selectOption,imageData
                     <div className='space-y-6'>
                         
 {/* daterange */}
+                     
+                      
                         <DateRange
                             editableDateInputs={true}
                             onChange={handleDateChange}
                             moveRangeOnFirstSelection={false}
-                            ranges={dateRange}
+                            ranges={state}
+                            
                         />
+                        {/* <DateRange
+                            rangeColors={[ '#F43F5E' ]}
+                            ranges={[ dateRange ]}
+                            onChange={handleDateChange}
+                            
+                        /> */}
 
                     <div className='space-y-1'>
                             <label htmlFor='location' className='block text-gray-600'>
@@ -139,12 +174,14 @@ name,email,price,startDate,endDate,selectOption,imageData
                         <div className='space-y-1 text-sm'>
                             <div>
                                
-                                <label htmlFor="options">Select an Guider:</label>
-                                <select id="options" onChange={handleGuiderChange} value={selectedGuider} >
-                                    <option value="option1">salam</option>
-                                    <option value="option2">hassan</option>
-                                    <option value="option3">robi</option>
+                                <label htmlFor="guider">Select an Guider:</label>
+                                <select name="guide" >
+                                    <option name="salam">salam</option>
+                                    <option name="hassan">hassan</option>
+                                    <option name="robi">robi</option>
                                 </select>
+
+                                
                             </div>
                             
                         
@@ -186,7 +223,7 @@ name,email,price,startDate,endDate,selectOption,imageData
                         type='submit'
                         className='w-full p-3 mt-5 text-center text-xl font-medium text-white transition duration-200 rounded shadow-md bg-blue-500'
                     >
-                     Contract Us
+                      Book Now
                     </button>
             
 

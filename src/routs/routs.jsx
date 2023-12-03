@@ -74,7 +74,7 @@ export const myRouts = createBrowserRouter([
             },
             {
                 path: '/detailsePackage/:id',
-                element: <PrivateRout> <DetailsePackage></DetailsePackage></PrivateRout>,
+                element: <DetailsePackage></DetailsePackage>,
                 loader:({params})=>detailsPage(params.id)
             },
            

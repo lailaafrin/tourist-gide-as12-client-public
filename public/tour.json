@@ -2,158 +2,187 @@
     {
         "tourist_name": "Sundarbans Mangrove Forest",
         "tour_type": "Home to the Bengal tiger and diverse wildlife...",
-        "email": "shondorbon@gmail.com",
-        "tourist_image": "img",
-        "note": "Little Sprouts Childcare",
-        "image": "htt1223269800-612x612ps://i.ibb.co/5nkMh4g/istockphoto-.jpg",
-        "duration": "4Days",
-        "price": "Tk1500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "image": "https://i.ibb.co/TMf3DwY/istockphoto-1223269800-612x612.jpg",
+        "duration": "4 Days",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
+        "price": 1500,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "laila.ph@gmail.com"
+        },
+        "guide": "salam"
     },
+
+    
     {
         "tour_type": "Longest natural sea beach in the world...",
         "tourist_name": "Cox's Bazar",
-        "email": "Little Sprouts Childcare",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/jGcyNJ2/longest-sea-beach-in.jpg",
-        "duration": "3Days",
-        "price": "Tk1000/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "3 Days",
+        "price":1000,
+    "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "laila.afrin80@gmail.com"
+        },
+
+        "guide": "Rofick"
     },
     {
         "tour_type": "Known as the 'Tea Capital' of Bangladesh",
         "tourist_name": "Srimangal",
-        "email": "srimongol@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/JCvMwwt/download-1.jpg",
-        "duration": "9Days",
-        "price": "Tk8570/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "9 Days",
+        "price":8570,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "tosf.ph@gmail.com"
+        },
+        "guide": "Joli"
     },
     {
         "tour_type": "Largest freshwater swamp forest in Bangladesh..",
         "tourist_name": "Ratargul Swamp Forest",
-        "email": "Forwst@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
+
         "image": "https://i.ibb.co/Cw5hkZM/istockphoto-1446199740-612x612.jpg",
-        "duration": "6Days",
-        "price": "Tk4600/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "6 Days",
+        "price":4600,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "tosf.ph@gmail.com"
+        },
+        "guide": "Jisan"
     },
     {
         "tour_type": "Only coral island in Bangladesh..",
         "tourist_name": "Saint Martin's Island",
-        "email": "sai@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/bFwRbTL/1878484-Saint-Martins-Island-Bangladesh.jpg",
-        "duration": "7Days",
-        "price": "Tk8500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "7 Days",
+        "price":8500,
+    "Tourist": {
+        "name": "LailaArin",
+        "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+        "email": "laila.afrin80@gmail.com"
     },
+        "guide": "Tina"
+    },
+
     {
         "tour_type": "Beautiful lakes indigenous culture.",
         "tourist_name": "Rangamati",
-        "email": "Ran@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+      "from": "2023-11-27T18:00:00.000Z",
+    "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/FV5JMyV/rangamati-hanging-bridge.jpg",
-        "duration": "1Days",
-        "price": "Tk3500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "1 Days",
+        "price":3500,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "tosf.ph@gmail.com"
+        },
+        "guide": "Hassan"
     },
     {
         "tour_type": "Known as  sunrise and sunset views",
         "tourist_name": "Kuakata",
-        "email": "Kua@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/CnxjtBF/360-F-368207548-G6r-QWR1o-STd-UD0-A8cq-ANU5j-QQDDj4l-AB.jpg",
-        "duration": "5Days",
-        "price": "Tk8550/-",
-        "service": "https://i.ibb.co/k5Kgv9f/p3.jpg",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "5 Days",
+        "price":8550,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "tosf.ph@gmail.com"
+        },
+        "guide": "MIti"
     },
     {
         "tour_type": "scenic landscapes and hill tracts",
         "tourist_name": "Bandarban",
-        "email": "Ban@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+       "from": "2023-11-27T18:00:00.000Z",
+    "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/cYM1pDC/Nilgiri-Bandarban.jpg",
-        "duration": "4Days",
-        "price": "Tk4500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "4 Days",
+        "price":4500,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "laila.afrin80@gmail.com"
+        },
+        "guide": "Joni"
     },
     
     {
         "tour_type": "Gateway to  historical sites",
         "tourist_name": "Khulna",
-        "email": "khul@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/xCQ5gbW/360-F-595385184-yd-Ysdr-Zavh-Rx-Rp-WMCW1qzitc-Kt-Jkx0wt.jpg",
-        "duration": "3Days",
-        "price": "Tk6500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "Lily's Childcare Services",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "3 Days",
+        "price": 6500,
+    "Tourist": {
+        "name": "LailaArin",
+        "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+        "email": "tosf.ph@gmail.com"
+    },
+        "guide": "Toni"
     },
     {
         "tour_type": "The capital city  modern attractions",
         "tourist_name": "Dhaka",
-        "email": "adk@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+    "from": "2023-11-27T18:00:00.000Z",
+    "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/WDkh9JH/Bangladesh-Dhaka-Metro-Shutterstock.jpg",
-        "duration": "4Days",
-        "price": "Tk5000/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "duration_type": "",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "4 Days",
+        "price":5000,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "laila.afrin80@gmail.com"
+        },
+        "guide": "Jamal"
     },
     {
         "tour_type": "Historic fort in Dhaka.",
         "tourist_name": "Lalbagh Fort",
-        "email": "lal@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/Bs4vzFC/d04a6cb8-2d85-44b7-8de4-69fba38775a11551047cec4f29deff-800px-Dhaka-Lalbagh-Fort-5.jpg",
-        "duration": "2Days",
-        "price": "Tk7500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "date": "11/3/2023",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "2 Days",
+        "price": 7500,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "laila.afrin80@gmail.com"
+        },
+        "guide": "Hasib"
     },
     {
         "tour_type": "Home to the Sixty Dome Mosque, ",
         "tourist_name": "Bagerhat",
-        "email": "bag@gmail.com",
-        "tourist_image": "Little Sprouts Childcare",
-        "note": "Little Sprouts Childcare",
+        "from": "2023-11-27T18:00:00.000Z",
+        "to": "2023-11-29T18:00:00.000Z",
         "image": "https://i.ibb.co/yB9jRDS/maxresdefault.jpg",
-        "duration": "3Days",
-        "price": "Tk8500/-",
-        "service": "All Standard,Deluxe Accommodation on Twin Sharing basis as per itinerary, AC /non ac Transport / Boat / Jeep / Local Transport All sightseeing, toll, tax and entry fees as per mentioned itinerary, Experienced Guide",
-        "date": "",
-        "guide_name": "Lily's Childcare Services"
+        "duration": "3 Days",
+        "price":8500,
+        "Tourist": {
+            "name": "LailaArin",
+            "image": "https://lh3.googleusercontent.com/a/ACg8ocJpxSpFQvm4fucJxMSOYG07EY-4eEqymED0zn2w8hBgHw=s96-c",
+            "email": "laila.afrin80@gmail.com"
+        },
+        "guide": "Moloy"
     }
 ]

@@ -100,42 +100,11 @@ function srcset(image, size, rows = 1, cols = 1) {
 const DetailsePackage = () => {
     const details = useLoaderData();
     const { user } = useAuth();
-    console.log(details)
+    
     const { _id, tourist_image, image, tourist_name, price } = details || {};
 
 
-    
-    
-  
-
-    const handleBooking =async (e) => {
-        e.preventDefault();
-
-        const form = e.target
-
-       
-        const name = form.name.value;
-        const email = form.email.value;
-        const price = form.price.value;
-
-        const startDate = state[ 0 ].startDate;
-        const endDate = state[ 0 ].endDate;
-        const selectOption = form.selectOption.value;
-        const image = form.image.files[ 0 ]; 
-        
-        const imageData = await imageUpload(image);
-
-        console.log(name, email, price,  selectOption);
-        console.log(imageData);
-
-
-    
-    
-    }
-
-   
-    
-    return (
+return (
             
         <div >
             <Helmet>
@@ -199,7 +168,7 @@ const DetailsePackage = () => {
                 </Card>
 
             </div>
-            <BookingFrom></BookingFrom>
+            <BookingFrom details={details}></BookingFrom>
             <Container>
             
 
