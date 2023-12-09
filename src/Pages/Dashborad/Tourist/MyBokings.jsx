@@ -20,7 +20,8 @@ const MyBokings = () => {
     const [ books, setBooks ] = useState([])
 
     const [ loading, setLoading ] = useState(true);
-
+    
+   
 
     useEffect(() => {
         if (user) {
@@ -35,13 +36,12 @@ const MyBokings = () => {
                 });
         }
     }, [ user ]);
-    
-    
+   
 
     return (
         
         <>
-            <Helmet>MyBooking</Helmet>
+            <Helmet><title>MyBooking</title></Helmet>
 
             <div className="container mx-auto px-4 sm:px-8">
                 <div className="py-8">
@@ -53,21 +53,22 @@ const MyBokings = () => {
                                     <tr>
 
                                         <th>Image</th>
-                                        <th>Name</th>
+                                        <th>GuideName</th>
                                         <th></th>
                                         <th>Price</th>
                                         <th></th>
                                         <th>Date</th>
+                                       
+
+                                        <th>Status</th>
+                                        <th>Actions</th>
                                         <th>Button</th>
-                                        <th>Button</th>
+                                       
                                     </tr>
                                 </thead>
                                 <tbody className="space-y-24">
                                     {books.map((booking) => (
-                                        <TableRowData key={booking._id} booking={booking}
-                                            setBooks={setBooks}
-                                        />
-                                     
+                                        <TableRowData key={booking._id} booking={booking} setBooks={setBooks} books={books} />
                                     ))}
                                 </tbody>
                             </table>
